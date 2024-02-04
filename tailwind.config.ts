@@ -16,5 +16,6 @@ const config: Config = {
     },
   },
   plugins: [],
+  transpilePackages: ["three"],
 };
 export default config;
