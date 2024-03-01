@@ -1,6 +1,6 @@
 "use client";
 
-import { PerspectiveCamera, Html, Text3D } from "@react-three/drei";
+import { Center, PerspectiveCamera, Html, Text3D } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { Perf } from "r3f-perf";
@@ -15,9 +15,19 @@ export default function Home() {
         <Perf position="top-left" />
         <OrbitControls makeDefault />
         <PerspectiveCamera position={[0, 0, 0]}>
-          <Text3D position={[-4, 1, 0]} font="assets/Dogways.json">
-            MANBOMBER
-          </Text3D>
+          <Center>
+            <Text3D
+              height={1}
+              size={1}
+              bevelEnabled
+              bevelThickness={1}
+              curveSegments={12}
+              font="assets/GeistMono.json"
+            >
+              <meshNormalMaterial />
+              MANBOMBER
+            </Text3D>
+          </Center>
           <pointLight intensity={0.2} position={[1, 0.5, 1]} />
           <ambientLight intensity={0.2} />
           <ManBomber />
